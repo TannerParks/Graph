@@ -32,6 +32,7 @@ int cheapest_path(string start, string end, map<string, vector<Edge>> routes){
                 min_price_city = elem.destination;  //using these because I couldn't figure out how to just get the minimum
                 //cout << min_price_city << " " << price_compare << endl;
             }
+            price_thru_current = cheapest_prices[current_city] + elem.cost;  //adds existing price of city to new price
             if(visited[elem.destination] != true){
                 //cout << "Size of unvisited is " << unvisited.size() << endl;
                 unvisited.push_back(elem.destination);
@@ -39,8 +40,7 @@ int cheapest_path(string start, string end, map<string, vector<Edge>> routes){
                 //cout << "Price for " << elem.destination << " is " << cheapest_prices[elem.destination] << endl;
                 //cout << "Cost " << elem.cost << endl;
                 //cout << "Price for " << elem.destination << " is " << cheapest_prices[elem.destination] << endl;
-                price_thru_current = cheapest_prices[elem.destination] + elem.cost;  //adds existing price of city to new price
-                cout << "price from " << current_city << " to " << elem.destination << " is " << price_thru_current << endl;
+                //cout << "price from " << start << " to " << elem.destination << " is " << price_thru_current << endl;
                 if(cheapest_prices[elem.destination] == 0 || price_thru_current < cheapest_prices[elem.destination]){
                     cheapest_prices[elem.destination] = price_thru_current;
                     cheapest_previous[elem.destination] = current_city;     //puts the cheapest previous city of the elem city into the cheapest_previous map
@@ -48,17 +48,10 @@ int cheapest_path(string start, string end, map<string, vector<Edge>> routes){
                     //cout << elem.destination << " cheapest price " << cheapest_prices[elem.destination] << " cheapest previous city " << cheapest_previous[elem.destination] << endl;
 
                 }
-                cout << "       Cheapest prices table for " << elem.destination << " " << cheapest_prices[elem.destination] << endl;
+                //cout << "       Cheapest prices table for " << elem.destination << " " << cheapest_prices[elem.destination] << endl;
             }
         }
         current_city = unvisited[0];
-
-        //for(auto i : unvisited){
-        //    cout << i << " ";
-        //}
-        //cout << endl;
-        //cout << unvisited.size() << endl;
-        //break;
     }
     
     current_city = end;
@@ -67,7 +60,6 @@ int cheapest_path(string start, string end, map<string, vector<Edge>> routes){
         current_city = cheapest_previous[current_city]; //follow each city to its cheapest previous city
     }
 
-    cout << "hi" << endl;
     shortest_path.push_back(start);
 
     for (std::vector<string>::reverse_iterator city = shortest_path.rbegin(); city != shortest_path.rend(); ++city){
@@ -77,14 +69,14 @@ int cheapest_path(string start, string end, map<string, vector<Edge>> routes){
 //
     //cout << "current city is " << current_city << endl;
 //
-    //cout << "cheapest previous city  " << endl;
-    //for(auto i : cheapest_previous){
-    //    cout << i.first << " " << i.second << endl;
-    //}
-    //cout << endl << "cheapest prices " << endl;
-    //for(auto i : cheapest_prices){
-    //    cout << i.first << " " << i.second << endl;
-    //}
+    cout << "cheapest previous city  " << endl;
+    for(auto i : cheapest_previous){
+        cout << i.first << " " << i.second << endl;
+    }
+    cout << endl << "cheapest prices " << endl;
+    for(auto i : cheapest_prices){
+        cout << i.first << " " << i.second << endl;
+    }
 
     return -1;
 }
