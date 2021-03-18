@@ -71,6 +71,12 @@ int main(){
     routes["Denver"].push_back({"Chicago", 40});
     routes["Denver"].push_back({"El Paso", 140});
     routes["El Paso"].push_back({"Boston", 100});
+    
+    display_destinations(routes["Atlanta"]);
+    display_destinations(routes["Boston"]);
+    display_destinations(routes["Chicago"]);
+    display_destinations(routes["Denver"]);
+    display_destinations(routes["El Paso"]);
 
     cheapest_path("Atlanta", "Chicago", routes);
     cheapest_path("Boston", "Atlanta", routes);
