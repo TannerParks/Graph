@@ -1,1 +1,1 @@
-# Graph
+I couldn't get to the minimum spanning path part of this project. I was basing my shortes path function off of one I found in a book but they did it in Ruby which doesn't translate very well to C++. I'm still going to work on it more today since it's not due for another 6 hours but I don't think that'll be enough time to finish the minimum spanning path unless I figure out the shortest path stuff soon.
