@@ -81,10 +81,5 @@ int main(){
     cheapest_path("Atlanta", "Chicago", routes);
     cheapest_path("Boston", "Atlanta", routes);
 
-    //display_destinations(routes["Atlanta"]);
-    //display_destinations(routes["Boston"]);
-    //display_destinations(routes["Chicago"]);
-    //display_destinations(routes["Denver"]);
-
     return -1;
 }
