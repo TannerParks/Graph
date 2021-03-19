@@ -1,6 +1,6 @@
 Update 2
 --
-I tried but I couldn't get the minimum spanning tree finished. I think I made this project a lot harder for myself by using strings in my graph instead of just integers because there were several times where problems I was having could've been fixed by comparing integers but by the time I had realized I should probably change it I had already spent so long working on it. It's late/early so I'm going to stop working on this. I uploaded my design PDF where I drew some pictures and I also included the file where I was working on the minimum spanning tree function. Hope you have a good break! 
+I tried but I couldn't get the minimum spanning tree finished. I think I made this project a lot harder for myself by using strings in my graph instead of just integers because there were several times where problems I was having could've been fixed by comparing integers but by the time I had realized I should probably change it I had already spent so long working on it. It's late/early so I'm going to stop working on this. I uploaded my design PDF where I drew some pictures/pseudocode and I included the file where I was working on the minimum spanning tree function. I also submitted the sorting and searching assignment we did on week 5 just in case it's not too late to get a grade for it. Hope you have a good break! 
 
 Update
 --
